@@ -1,0 +1,110 @@
+An Interface in Java programming language is defined as an abstract type used to specify the behavior of a class. An interface in Java is a blueprint of a class. A Java interface contains static constants and abstract methods.Syntax:
+
+interface {
+
+    // declare constant fields
+    // declare methods that abstract 
+    // by default.   
+}
+
+
+package interfaces;
+
+interface it{
+	int x=5;
+}
+
+public class intdemo implements it{
+
+	public static void main(String[] args) {
+		System.out.println(x);
+	
+
+	}
+
+}
+
+
+
+ex2
+
+package interfaces;
+
+interface it1{
+	void m1();
+	}
+interface it2{
+	void m1(); 
+}
+
+public class methodex implements it1,it2{
+	public void m1() {
+		System.out.println("hai");
+	}
+	public static void main(String[] args) {
+		methodex obj=new methodex();
+		obj.m1();
+		
+	}
+
+}
+
+ex
+
+package interfaces;
+
+
+interface left{
+	int x = 5;
+}
+interface right{
+	int x = 8;
+}
+//when two interface having same variable
+
+public class sides implements left,right{
+
+	public static void main(String[] args) {
+		System.out.println(left.x);
+		System.out.println(right.x);
+	
+
+	}
+
+}
+
+
+
+ex
+package interfaces;
+
+interface its{
+	void m1();  //by default public abstrat method
+	void m2();
+	void m3();
+}
+abstract class impclass implements its{
+	public void m1() {
+	System.out.println("hai");
+	}
+}
+
+
+public class imp extends impclass{
+	public void m2() {
+		System.out.println("hai2");
+		}
+	public void m3() {
+		System.out.println("hai3");
+		}
+
+	public static void main(String[] args) {
+	    imp obj = new imp();
+	    obj.m1();
+	    obj.m3();
+		
+
+	}
+
+}
+

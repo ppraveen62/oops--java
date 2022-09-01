@@ -1,0 +1,188 @@
+Classes and objects are the two main aspects of object-oriented programming.
+
+class
+Fruit
+
+objects
+
+Apple
+Banana
+Mango
+
+Another example:
+
+class
+Car
+
+objects
+
+Volvo
+Audi
+Toyota
+
+Create a Class
+
+To create a class, use the keyword class:
+
+Create a class named "Main" with a variable x:
+
+public class Main {
+  int x = 5;
+}
+
+Create an Object
+In Java, an object is created from a class. We have already created the class named Main, so now we can use this to create objects.
+
+To create an object of Main, specify the class name, followed by the object name, and use the keyword new:
+
+Example
+Create an object called "myObj" and print the value of x:
+
+public class Main {
+  int x = 5;
+
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    System.out.println(myObj.x);
+  }
+}
+
+5
+
+
+Multiple Objects
+You can create multiple objects of one class:
+
+Example
+Create two objects of Main:
+
+public class Main {
+  int x = 5;
+
+  public static void main(String[] args) {
+    Main myObj1 = new Main();  // Object 1
+    Main myObj2 = new Main();  // Object 2
+    System.out.println(myObj1.x);
+    System.out.println(myObj2.x);
+  }
+}
+
+5
+5
+
+Using Multiple Classes
+You can also create an object of a class and access it in another class. This is often used for better organization of classes (one class has all the attributes and methods, while the other class holds the main() method (code to be executed)).
+
+Remember that the name of the java file should match the class name. In this example, we have created two files in the same directory/folder:
+
+Main.java
+Second.java
+
+Main.java
+public class Main {
+  int x = 5;
+}
+
+
+Second.java
+
+class Second {
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    System.out.println(myObj.x);
+  }
+}
+
+ex:
+
+addition.java
+package classes;
+
+public class addition {
+	int x=4;int y=6;
+	}
+
+add.java
+
+package classes;
+
+public class add {
+
+	public static void main(String[] args) {
+		addition myobej= new addition();
+		System.out.println(myobej.x + myobej.y);
+	}
+
+}
+
+
+
+ex2:
+addition.java
+
+package classes;
+
+public class addition {
+	static void sum(int x,int y) {
+		System.out.println("sum of two numbers "+(x+y));
+	}
+}
+
+
+
+add.java
+
+package classes;
+
+public class add {
+
+	public static void main(String[] args) {
+		addition myobej= new addition();
+		myobej.sum(3,4);
+		myobej.sum(2, 9);
+	}
+
+}
+
+
+output
+
+sum of two numbers 7
+sum of two numbers 11
+
+
+
+override existing values:
+
+
+public class Main {
+  int x = 10;
+
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    myObj.x = 25; // x is now 25
+    System.out.println(myObj.x);
+  }
+}
+
+25
+
+
+Multiple Attributes
+
+public class Main {
+  String fname = "John";
+  String lname = "Doe";
+  int age = 24;
+
+  public static void main(String[] args) {
+    Main myObj = new Main();
+    System.out.println("Name: " + myObj.fname + " " + myObj.lname);
+    System.out.println("Age: " + myObj.age);
+  }
+}
+
+Name: John Doe
+Age: 24
+
+

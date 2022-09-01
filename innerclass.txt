@@ -1,0 +1,164 @@
+InnerClasses:
+------------
+There are basically four types of inner classes in java
+
+1.Nested inner classes
+2.Method Local inner classes
+3.static nested classes
+4.Anonymous Inner classes
+
+Advantages:
+-----------
+1.Making the code clean and readable
+2.Private methods of outer class can be accessed, so bringing new dimension and making it closer to the real world
+3.Optimizing the code
+
+ex nested inner class
+
+package innerclass;
+//nested inner class
+
+public class outer {
+
+	String msg="Hey Folks.... Welcome to JAVA..!!!";
+	
+	class Inner{   //inner class
+		
+		void hello() {   //method
+			System.out.println(msg+",Let's start leaning Inner Classes");
+		}
+	}
+	public static void main(String[] args) {
+		
+		//calling inner class obj
+
+		outer.Inner in=new outer().new Inner();
+		in.hello();
+	}
+}
+
+
+ex method local inner class
+package innerclass;
+
+//Method Local inner classes
+
+public class outer2 {
+
+	private String msg="Inner Classes";
+	
+	//method inside class
+	void display() {
+		class Inner{
+			void msg() {
+				System.out.println(msg);
+			}
+		}
+		Inner I=new Inner();
+		I.msg();
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		outer2 obj=new outer2();
+		obj.display();
+	}
+
+}
+
+
+ex static nested classes
+
+
+
+package innerclass;
+
+public class outer3 {
+	    private static void outerMethod()
+	    {
+	        System.out.println("inside outerMethod");
+	    }
+	 
+
+	    // Static inner class
+	    static class Inner {
+	 
+	        public static void display()
+	        {
+	            System.out.println("inside inner class Method");
+	 
+	            // Calling method inside main() method
+	            outerMethod();
+	        }
+	    }
+	    
+	    
+    public static void main(String args[]){
+    	
+	        Inner.display();//calling method which is in static inner class.
+	    }
+	    
+}
+
+
+
+Anonymous Inner classes
+
+
+Java program to illustrate the use of a subclass of a specified type:
+
+class OuterClass {
+  void print() {
+    System.out.println("I am in the print method of superclass");
+  }
+}
+class AnonymousClass {
+  //  An anonymous class with OuterClass as base class 
+  //start of the anonymous class.
+  static OuterClass out = new OuterClass() {
+    void print() {
+      super.print();
+      System.out.println("I am in Anonymous class");
+    }
+  };
+  public static void main(String[] args) {
+    out.print();
+  }
+}
+Output
+
+I am in the print method of the superclass
+I am in Anonymous class
+
+Java program to illustrate the use of anonymous classes to implement interfaces:
+
+package innerclass;
+
+interface Anonym {
+		  void print();
+		}
+
+public class outer4 implements Anonym {
+		  //  An anonymous class with OuterClass as base class 
+		  //start of the anonymous class.
+		    public void print() {
+		      System.out.println("I am an implementation of interface Anonym");
+		    }
+
+	public static void main(String[] args) {
+		outer4 obj= new outer4();
+		obj.print();
+		   
+		  }
+	
+ }
+
+
+Output
+
+I am an implementation of interface Anonym
+
+
+
+
+
+
